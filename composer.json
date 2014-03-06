@@ -1,0 +1,18 @@
+{
+    "name": "cgoosey1/laravel-oauth2-server",
+    "description": "Laravel 4 OAuth2 Server",
+    "homepage": "https://github.com/cgoosey1/laravel-oauth2-server",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Chris Goosey",
+            "email": "c.goosey.uk@googlemail.com",
+            "homepage": "http://dfg.gd/"
+        }
+    ],
+    "support": {
+          "email": "chris.goosey@jupix.com"
+    },
+    "minimum-stability": "stable"
+}
