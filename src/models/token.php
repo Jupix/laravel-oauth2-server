@@ -1,10 +1,14 @@
 <?php
 namespace SebRenauld\OAuth2\Models;
-use Laravel\Response as Response;
-use Laravel\Config as Config;
+use Response;
+use Config;
 use Eloquent;
 class Token extends Eloquent {
-	public static $table = "oa_tokens";
+	public function __construct()
+	{
+		$this->table = Config::get('oauth2::oauth2.tokenTable', 'oauth_token');
+		parent::__construct();
+	}
 	public static function generateAuthToken($clientID) {
 		$r = new Token();
 		$r->code = static::generateEntropy();
@@ -35,7 +39,7 @@ class Token extends Eloquent {
 		return $r;
 	}
 	public function scopes() {
-		return $this->has_many_and_belongs_to("SebRenauld\\OAuth2\\Models\\Scope","oa_token_scope");
+		return $this->belongsToMany("SebRenauld\\OAuth2\\Models\\Scope",Config::get('oauth2::oauth2.tokenScopeTable', 'oauth_token_scope'));
 	}
 	public function printToken() {
 		if ($this->type !== 1) {

@@ -1,5 +1,5 @@
 <?php
-class OAuth_OAuth_Controller extends Base_Controller {
+class OAuth_OAuth_Controller {
 	public $restful = true;
 	public function get_authorize() {
 		$oA = new SebRenauld\OAuth2();
@@ -13,7 +13,7 @@ class OAuth_OAuth_Controller extends Base_Controller {
 	public function post_token() {
 		$oA = new SebRenauld\OAuth2();
 		$r = $oA->grantAccessToken(Input::all());
-		if ($r instanceof Laravel\Response) {
+		if ($r instanceof Response) {
 			return $r;
 		}
 		var_dump($r);

@@ -30,6 +30,11 @@ return array(
 		
 		/* Default access token lifetime
 		 * Again, integers, please */
-		"access_lifetime" => 86400
+		"access_lifetime" => 86400,
+		"clientTable" => "oauth_client",
+		"scopeTable" => "oauth_client_scope",
+		"scopeTable" => "oauth_scope",
+		"tokenTable" => "oauth_token",
+		"tokenScopeTable" => "oauth_token_scope",
 );
 	

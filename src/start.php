@@ -1,13 +1,15 @@
 <?php
+/*
 Autoloader::map(array(
-	/* Required models. Feel free to mock those */
+	// Required models. Feel free to mock those 
 	"SebRenauld\OAuth2\Models\Scope" => dirname(__FILE__).DS."models".DS."scope.php",
 	"SebRenauld\OAuth2\Models\Client" => dirname(__FILE__).DS."models".DS."client.php",
 	"SebRenauld\OAuth2\Models\Token" => dirname(__FILE__).DS."models".DS."token.php",
 	
-	/* The actual library */
+	// The actual library 
 	"SebRenauld\OAuth2" => dirname(__FILE__).DS."libraries".DS."oauth2.php"
 ));
+	*/
 Route::filter("oauth2", function() {
 	$t = Input::get("oauth_token");
 	if (!$t) return Response::error(403);

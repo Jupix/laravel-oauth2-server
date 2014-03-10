@@ -1,10 +1,10 @@
 <?php
 namespace SebRenauld;
 use Exception;
-use Laravel\Event as Event;
-use Laravel\Response as Response;
-use Laravel\Config as Config;
-use Laravel\Validator as Validator;
+use Event;
+use Response;
+use Config;
+use Validator;
 use stdClass;
 
 class OAuth2 {
@@ -294,11 +294,13 @@ class OAuth2 {
 		$validations = array(
 			"redirect_uri" => "required",
 			"response_type" => "required|in:token,code,code-and-token",
-			"redirect_uri" => "required|url|match:#^".preg_quote($client->redirect,"#")."#");
+			"redirect_uri" => "required|url|regex:#^".preg_quote($client->redirect,"#")."#");
+		//var_dump($params);
+		//dd($validations);
 		$v = Validator::make($params,$validations);
 		if ($v->fails()) {
 			/* URI validation failed */
-			if ($v->errors->has("redirect_uri")) {
+			if ($v->messages()->has("redirect_uri")) {
 				if (!empty($params['redirect_uri'])) {
 					$r = new stdClass();
 					$r->type = "redirect";

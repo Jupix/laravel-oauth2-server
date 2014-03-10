@@ -11,6 +11,15 @@
             "homepage": "http://dfg.gd/"
         }
     ],
+    "autoload": {
+        "classmap": [
+            "src/libraries",
+            "src/models"
+	],
+        "psr-0": {
+            "cgoosey1\\Oauth2": "src/"
+        }
+    },
     "support": {
           "email": "chris.goosey@jupix.com"
     },
