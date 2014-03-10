@@ -6,7 +6,7 @@ use Eloquent;
 class Token extends Eloquent {
 	public function __construct()
 	{
-		$this->table = Config::get('oauth2::oauth2.tokenTable', 'oa_tokens');
+		$this->table = Config::get('oauth2-sp::oauth2.tokenTable', 'oa_tokens');
 		parent::__construct();
 	}
 	public static function generateAuthToken($clientID) {
@@ -39,7 +39,7 @@ class Token extends Eloquent {
 		return $r;
 	}
 	public function scopes() {
-		return $this->belongsToMany("SebRenauld\\OAuth2\\Models\\Scope",Config::get('oauth2::oauth2.tokenScopeTable', 'oa_token_scope'));
+		return $this->belongsToMany("SebRenauld\\OAuth2\\Models\\Scope",Config::get('oauth2-sp::oauth2.tokenScopeTable', 'oa_token_scope'));
 	}
 	public function printToken() {
 		if ($this->type !== 1) {
