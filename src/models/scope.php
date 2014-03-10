@@ -5,7 +5,7 @@ use Config;
 class Scope extends Eloquent {
 	public function __construct()
 	{
-		$this->table = Config::get('oauth2::oauth2.scopeTable', 'oauth_scope');
+		$this->table = Config::get('oauth2::oauth2.scopeTable', 'oa_scopes');
 		parent::__construct();
 	}
 	public static function listScopes() {
