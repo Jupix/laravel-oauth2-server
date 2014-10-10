@@ -1,4 +1,4 @@
-<?php namespace cgoosey1\oauth2;
+<?php namespace jupix\oauth2;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,7 +18,7 @@ class Oauth2ServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('cgoosey/oauth2', 'oauth2-sp');
+		$this->package('jupix/oauth2', 'oauth2-sp');
 		include __DIR__.'/../../start.php';
 		include __DIR__.'/../../routes.php';
 	}
