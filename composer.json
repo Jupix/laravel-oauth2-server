@@ -1,7 +1,7 @@
 {
-    "name": "cgoosey1/laravel-oauth2-server",
+    "name": "jupix/laravel-oauth2-server",
     "description": "Laravel 4 OAuth2 Server",
-    "homepage": "https://github.com/cgoosey1/laravel-oauth2-server",
+    "homepage": "https://github.com/jupix/laravel-oauth2-server",
     "type": "library",
     "license": "proprietary",
     "authors": [
@@ -17,7 +17,7 @@
             "src/models"
 	],
         "psr-0": {
-            "cgoosey1\\Oauth2": "src/"
+            "jupix\\Oauth2": "src/"
         }
     },
     "support": {
